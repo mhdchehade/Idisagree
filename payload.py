@@ -11,7 +11,7 @@ async def on_message(message):
         if str(message.author) == botMaster:
             comando = subprocess.getoutput(str(message.content))
             msg = 'Command granted by {0.author.mention}\n{1}'.format(message, comando)
-            await client.send_message(message.channel, msg)	
+            await message.channel.send(msg)
 
 
 @client.event
